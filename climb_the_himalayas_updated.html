@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climb the Himalayas</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Poppins', sans-serif; }
+
+    header {
+      background:#0b3d91;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    nav {
+      background:#111;
+      padding:12px;
+      text-align:center;
+      position:sticky;
+      top:0;
+    }
+
+    nav a {
+      color:white;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    .hero {
+      background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center/cover;
+      height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      text-align:center;
+      flex-direction:column;
+    }
+
+    .btn {
+      background:#00c3ff;
+      color:white;
+      padding:12px 25px;
+      border:none;
+      border-radius:5px;
+      text-decoration:none;
+    }
+
+    .section { padding:50px 20px; text-align:center; }
+
+    .packages {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:25px;
+    }
+
+    .card {
+      width:280px;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .card img { width:100%; height:180px; object-fit:cover; }
+
+    footer {
+      background:#0b3d91;
+      color:white;
+      text-align:center;
+      padding:15px;
+    }
+
+    .whatsapp {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      padding:15px;
+      border-radius:50%;
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Climb the Himalayas</h1>
+  <p>Your Adventure Begins Here</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#packages">Packages</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+  <h1>Explore the Himalayas</h1>
+  <p>Join the best trekking experiences</p>
+  <a href="#contact" class="btn">Book Now</a>
+</div>
+
+<section class="section" id="packages">
+  <h2>Popular Treks</h2>
+  <div class="packages">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b">
+      <h3>Kedarkantha Trek</h3>
+      <p>Snow trek perfect for beginners.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <h3>Bharadsar Trek</h3>
+      <p>Peaceful forest and mountain views.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      <h3>Jhandi Top Trek</h3>
+      <p>Sunrise views and scenic beauty.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Book Your Trek</h2>
+
+  <form onsubmit="sendWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="phone" placeholder="Phone Number" required>
+    <textarea id="message" placeholder="Which trek are you interested in?"></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
+
+</section>
+
+<footer>
+  <p>© 2026 Climb the Himalayas</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/918077607949" target="_blank">💬</a>
+
+<script>
+function sendWhatsApp() {
+  var name = document.getElementById('name').value;
+  var phone = document.getElementById('phone').value;
+  var message = document.getElementById('message').value;
+
+  var url = "https://wa.me/918077607949?text="
+    + "Name: " + name + "%0a"
+    + "Phone: " + phone + "%0a"
+    + "Message: " + message;
+
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
